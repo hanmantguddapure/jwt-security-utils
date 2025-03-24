@@ -3,6 +3,7 @@ package com.security.utils.controller;
 import com.security.utils.dto.request.AuthDetails;
 import com.security.utils.jwt.JwtService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 public class AuthController {
 
     private final JwtService jwtService;
+    private final UserDetailsService userDetailsService;
 
     @GetMapping("/welcome")
     public String welcome() {
@@ -19,6 +21,7 @@ public class AuthController {
 
     @PostMapping("/generateToken")
     public String authenticateAndGetToken(@RequestBody AuthDetails authRequest) {
+        userDetailsService.loadUserByUsername(authRequest.getUsername());
         return jwtService.generateToken(authRequest.getUsername());
     }
 }
