@@ -1,7 +1,7 @@
-package com.security.utils.config;
+package com.airwire.utils.config;
 
 
-import com.security.utils.jwt.JwtAuthFilter;
+import com.airwire.utils.jwt.JwtAuthFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,8 +22,22 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .csrf(AbstractHttpConfigurer::disable)
+                .headers(headers -> headers
+                        .frameOptions(frameOptions -> frameOptions.sameOrigin()) // <-- Allow frames from same origin
+                )
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/auth/**").permitAll()
+                        .requestMatchers(
+                                "/auth/**",
+                                "/h2-console/**",
+                                "/v3/api-docs/**",
+                                "/v3/api-docs/swagger-config",  // <- Add this if missing
+                                "/swagger-resources/**",
+                                "/swagger-resources/configuration/ui",
+                                "/swagger-resources/configuration/security",
+                                "/swagger-ui/**",
+                                "/swagger-ui.html",
+                                "/webjars/**"  // <- Swagger needs static files for JS, CSS
+                        ).permitAll()
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(securitySessionManagementConfigurer -> securitySessionManagementConfigurer.sessionCreationPolicy(SessionCreationPolicy.STATELESS))

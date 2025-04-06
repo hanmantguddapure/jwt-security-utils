@@ -1,4 +1,4 @@
-package com.security.utils.dto.request;
+package com.airwire.utils.dto.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

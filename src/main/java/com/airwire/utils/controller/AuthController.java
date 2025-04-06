@@ -1,7 +1,7 @@
-package com.security.utils.controller;
+package com.airwire.utils.controller;
 
-import com.security.utils.dto.request.AuthDetails;
-import com.security.utils.jwt.JwtService;
+import com.airwire.utils.dto.request.AuthDetails;
+import com.airwire.utils.jwt.JwtService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.web.bind.annotation.*;

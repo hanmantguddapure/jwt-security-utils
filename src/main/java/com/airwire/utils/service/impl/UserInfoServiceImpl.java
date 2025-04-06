@@ -1,15 +1,12 @@
-package com.security.utils.service.impl;
+package com.airwire.utils.service.impl;
 
-import com.security.utils.entity.User;
-import com.security.utils.repository.UserRepository;
+import com.airwire.utils.entity.User;
+import com.airwire.utils.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 @RequiredArgsConstructor

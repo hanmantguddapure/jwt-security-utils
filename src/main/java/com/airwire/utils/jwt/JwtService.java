@@ -1,4 +1,4 @@
-package com.security.utils.jwt;
+package com.airwire.utils.jwt;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

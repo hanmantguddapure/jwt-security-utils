@@ -1,4 +1,4 @@
-package com.security.utils.entity;
+package com.airwire.utils.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;

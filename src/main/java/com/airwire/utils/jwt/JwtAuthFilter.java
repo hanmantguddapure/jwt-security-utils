@@ -1,6 +1,6 @@
-package com.security.utils.jwt;
+package com.airwire.utils.jwt;
 
-import com.security.utils.service.impl.UserInfoServiceImpl;
+import com.airwire.utils.service.impl.UserInfoServiceImpl;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
