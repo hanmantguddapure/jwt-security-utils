@@ -7,9 +7,10 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class AuthDetails {
-
+public class UserDetailRequest {
+    private Long userId;
     private String username;
     private String password;
+    private String role;
 
 }
