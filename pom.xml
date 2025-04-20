@@ -7,7 +7,7 @@
 
     <groupId>com.airwire</groupId>
     <artifactId>sucurity-utils</artifactId>
-    <version>0.0.7-SNAPSHOT</version>
+    <version>0.0.10-SNAPSHOT</version>
     <name>Security Utils</name>
     <description>Utility library for JWT Token Security</description>
 

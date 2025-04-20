@@ -22,7 +22,7 @@ public class UserInfoServiceImpl implements UserDetailsService{
         return org.springframework.security.core.userdetails.User.builder()
                 .username(user.getUsername())
                 .password(user.getPassword())
-                .roles(user.getRoles().stream().map(Role::getName).toArray(String[]::new))
+                //.roles(user.getRoles().stream().map(Role::getName).toArray(String[]::new))
                 .build();
     }
 

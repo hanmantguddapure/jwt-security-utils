@@ -7,12 +7,14 @@ import com.airwire.utils.repository.RoleRepository;
 import com.airwire.utils.repository.UserRepository;
 import com.airwire.utils.service.CustomUserDetailService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.annotation.Profile;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.Set;
 
+@Profile("!local")
 @Service
 @RequiredArgsConstructor
 public class CustomUserInfoServiceImpl implements CustomUserDetailService {
