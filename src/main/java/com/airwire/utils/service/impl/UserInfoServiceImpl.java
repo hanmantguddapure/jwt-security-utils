@@ -1,5 +1,6 @@
 package com.airwire.utils.service.impl;
 
+import com.airwire.utils.entity.Role;
 import com.airwire.utils.entity.User;
 import com.airwire.utils.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -21,7 +22,7 @@ public class UserInfoServiceImpl implements UserDetailsService{
         return org.springframework.security.core.userdetails.User.builder()
                 .username(user.getUsername())
                 .password(user.getPassword())
-                .roles(user.getRoles())
+                .roles(user.getRoles().stream().map(Role::getName).toArray(String[]::new))
                 .build();
     }
 
